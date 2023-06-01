@@ -1,19 +1,37 @@
 # Encrypting Files on Linode Object Storage
 
 This guide will take you through the process of creating a bucket and uploading/downloading encrypted files to and from it through a shell terminal.
-
-## Linux
 ### 1. Create Bucket
 On the Linode dashboard, go to Object Storage and click "Create Bucket". Give it a label and select the desired region.
 ### 2. Create an Access Key
 Go to the "Access Keys" tab next to the "Bucketss" tab and click on "Create Access Key". Give it a label and select "Create Access Key". Make sure to save the secret Access Key.
 
-### 3. Install pip and s3cmd
+
+## Mac
+### 1. Install command line tools
+```
+xcode-select --install
+```
+
+### 2. Install s3cmd and gpg
+```
+brew install s3cmd
+brew install gpg
+```
+
+
+
+## Linux
+
+### 1. Install pip and s3cmd
 ```
 sudo apt update
 sudo apt install python3-pip
 sudo pip install s3cmd
 ```
+
+## Continue Here:
+
 ### 4. Configure S3cmd
 ```
 s3cmd --configure
@@ -47,6 +65,20 @@ Use default path
 #### When the prompt appears to test access with the supplied credentials, enter n to skip. Currently, this process results in the following error - even when the settings are correct.
 
 #### When the prompt appears to save your settings, enter Y. A configuration file named .s3cfg is created within your home directory.
+
+### 6. Upload Encrypted Files:
+```
+s3cmd put file.txt s3://your-bucket/ -e
+```
+
+`-e` flag encrypts the file. RSA is default
+
+### 7. Download Encrypted Files:
+```
+s3cmd get s3://your-bucket/file.txt -e
+
+```
+`-e` flag decrypts the file.
 
 
 
