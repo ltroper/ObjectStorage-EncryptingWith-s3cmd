@@ -89,6 +89,12 @@ s3cmd get s3://your-bucket/file.txt -e
 ```
 `-e` flag decrypts the file.
 
+#### For downloading entire directories, add the --recursive flag
+
+```
+s3cmd get s3://your-bucket/my-directory -e --recursive
+```
+
 
 
 
