@@ -79,7 +79,7 @@ s3cmd put file.txt s3://your-bucket/ -e
 #### For uploading directories, add the --recursive flag
 
 ```
-s3cmd put directory s3://your-bucket/ -e --recursive
+s3cmd put my-directory s3://your-bucket/ -e --recursive
 ```
 
 ### 7. Download Encrypted Files:
