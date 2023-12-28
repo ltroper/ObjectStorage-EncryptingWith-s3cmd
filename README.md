@@ -76,6 +76,12 @@ s3cmd put file.txt s3://your-bucket/ -e
 
 `-e` flag encrypts the file. RSA is default
 
+#### For uploading directories, add the --recursive flag
+
+```
+s3cmd put directory s3://your-bucket/ -e --recursive
+```
+
 ### 7. Download Encrypted Files:
 ```
 s3cmd get s3://your-bucket/file.txt -e
