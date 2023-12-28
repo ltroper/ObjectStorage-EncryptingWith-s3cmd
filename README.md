@@ -63,6 +63,7 @@ Use default path
 #### Leave everything else as default (Just press 'enter')
 
 #### When the prompt appears to test access with the supplied credentials, enter n to skip. Currently, this process results in the following error - even when the settings are correct.
+
 Please wait, attempting to list all buckets...
 ERROR: Test failed: 403 (SignatureDoesNotMatch)
 
